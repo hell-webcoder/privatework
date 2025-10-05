@@ -6,11 +6,11 @@ import random from "random";
 const path = "./data.json";
 
 const markCommit = (x, y) => {
+  const randomDay = random.int(0, 364); // 365 days in 2025 (0-364)
   const date = moment()
     .year(2025)
     .startOf('year')
-    .add(x, "w")
-    .add(y, "d")
+    .add(randomDay, "d")
     .format();
 
   const data = {
@@ -24,9 +24,8 @@ const markCommit = (x, y) => {
 
 const makeCommits = (n) => {
   if(n===0) return simpleGit().push();
-  const x = random.int(0, 54);
-  const y = random.int(0, 6);
-  const date = moment().year(2025).startOf('year').add(x, "w").add(y, "d").format();
+  const randomDay = random.int(0, 364); // 365 days in 2025 (0-364)
+  const date = moment().year(2025).startOf('year').add(randomDay, "d").format();
 
   const data = {
     date: date,
@@ -37,4 +36,4 @@ const makeCommits = (n) => {
   });
 };
 
-makeCommits(2000);
+makeCommits(20);
