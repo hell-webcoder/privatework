@@ -7,8 +7,8 @@ const path = "./data.json";
 
 const markCommit = (x, y) => {
   const date = moment()
-    .subtract(1, "y")
-    .add(1, "d")
+    .year(2025)
+    .startOf('year')
     .add(x, "w")
     .add(y, "d")
     .format();
@@ -26,7 +26,7 @@ const makeCommits = (n) => {
   if(n===0) return simpleGit().push();
   const x = random.int(0, 54);
   const y = random.int(0, 6);
-  const date = moment().subtract(1, "y").add(1, "d").add(x, "w").add(y, "d").format();
+  const date = moment().year(2025).startOf('year').add(x, "w").add(y, "d").format();
 
   const data = {
     date: date,
@@ -37,4 +37,4 @@ const makeCommits = (n) => {
   });
 };
 
-makeCommits(10);
+makeCommits(2000);
