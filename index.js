@@ -37,7 +37,7 @@ const makeCommits = (n) => {
   const randomSecond = random.int(0, 59); // 0-59 seconds
   
   const date = moment()
-    .year(2025)
+    .year(2020)
     .startOf('year')
     .add(randomDay, "d")
     .add(randomHour, "h")
@@ -54,4 +54,4 @@ const makeCommits = (n) => {
   });
 };
 
-makeCommits(10);
+makeCommits(100);
