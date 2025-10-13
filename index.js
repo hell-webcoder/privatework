@@ -31,7 +31,7 @@ const markCommit = (x, y) => {
 
 const makeCommits = (n) => {
   if(n===0) return simpleGit().push();
-  const randomDay = random.int(0, 272); // 273 days from Jan 1 to Sep 30 (0-272)
+  const randomDay = random.int(0, 364); // 273 days from Jan 1 to Sep 30 (0-272)
   const randomHour = random.int(0, 23); // 0-23 hours
   const randomMinute = random.int(0, 59); // 0-59 minutes
   const randomSecond = random.int(0, 59); // 0-59 seconds
